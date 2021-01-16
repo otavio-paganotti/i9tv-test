@@ -1,0 +1,12 @@
+/* Import Bootstrap styles */
+@import 'bootstrap/scss/bootstrap.scss';
+@import 'bootstrap-vue/src/index.scss';
+
+/* Import variables */
+@import 'variables/index';
+
+/* Import components */
+@import 'modules/body';
+@import 'modules/header';
+@import 'modules/dropdown';
+@import 'modules/fonts';
