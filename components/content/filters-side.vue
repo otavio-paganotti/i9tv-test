@@ -81,7 +81,6 @@ export default {
     showFilters: false,
     showWhereWatch: false,
     radioSelected: 'A',
-    selected: '/popular',
     options: [
       { value: '/popular', text: 'Popularidade' },
       // { value: '/latest', text: 'Lançamento' },
@@ -103,6 +102,14 @@ export default {
       },
       set (value) {
         this.$store.commit('movies/filters', { ...this.filters, endpoint: value })
+      }
+    },
+    selected: {
+      get () {
+        return this.$store.getters['movies/selected']
+      },
+      set (value) {
+        this.$store.commit('movies/selected', value)
       }
     }
   },

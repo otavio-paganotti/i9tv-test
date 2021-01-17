@@ -20,7 +20,7 @@
               <div class="content">
                 <div class="consensus tight">
                   <div class="outer_ring">
-                    <div class="user_score_chart 595686c79251412b2306a55c" data-percent="72.0" data-track-color="#204529" data-bar-color="#21d07a">
+                    <div class="user_score_chart" data-track-color="#204529" data-bar-color="#21d07a">
                       <div class="percent">
                         <span class="icon" :class="'icon-r' + movie.vote_average * 10" />
                       </div>
@@ -38,11 +38,16 @@
                 </p>
               </div>
             </div>
-            <div class="pagination infinite">
+            <div v-if="!loading" class="pagination infinite">
               <b-btn block class="background_color light_blue" style="color: #fff;" size="lg" @click="getMovies()">
                 Carregar mais
               </b-btn>
             </div>
+          </div>
+          <div v-if="loading" class="center mt-4">
+            <b-spinner
+              variant="dark"
+            />
           </div>
         </div>
       </section>
@@ -54,7 +59,7 @@
 import { mapGetters, mapActions } from 'vuex'
 export default {
   computed: {
-    ...mapGetters('movies', ['movies', 'page', 'total_pages', 'total_results'])
+    ...mapGetters('movies', ['movies', 'page', 'total_pages', 'total_results', 'loading'])
   },
   mounted () {
     this.resetPagination()

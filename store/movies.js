@@ -10,7 +10,9 @@ export const state = () => ({
   },
   filters: {
     endpoint: '/popular'
-  }
+  },
+  selected: '/popular',
+  loading: false
 })
 
 export const mutations = {
@@ -34,6 +36,12 @@ export const mutations = {
   },
   filters: (state, payload) => {
     state.filters = payload
+  },
+  selected: (state, payload) => {
+    state.selected = payload
+  },
+  loading: (state, payload) => {
+    state.loading = payload
   }
 }
 
@@ -42,6 +50,7 @@ export const actions = {
     if (state.page >= state.total_pages) {
       return
     }
+    commit('loading', true)
     commit('page', state.page + 1)
     this.$axios.get('/movie' + state.filters.endpoint, {
       params: {
@@ -60,6 +69,9 @@ export const actions = {
           status_code: err.response.data.status_code,
           status_message: err.response.data.status_message
         })
+      })
+      .finally(() => {
+        commit('loading', false)
       })
   },
   resetPagination ({ commit }) {
@@ -97,5 +109,7 @@ export const getters = {
   total_pages: state => state.total_pages,
   total_results: state => state.total_results,
   errors: state => state.errors,
-  filters: state => state.filters
+  filters: state => state.filters,
+  selected: state => state.selected,
+  loading: state => state.loading
 }

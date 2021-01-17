@@ -66,15 +66,15 @@ export default {
           },
           {
             label: 'Em cartaz',
-            url: '/movie/now-playing'
+            url: '/now-playing'
           },
           {
             label: 'Próximas Estreias',
-            url: '/movie/upcoming'
+            url: '/upcoming'
           },
           {
             label: 'Mais bem avaliados',
-            url: '/movie/top-rated'
+            url: '/top-rated'
           }
         ]
       },
