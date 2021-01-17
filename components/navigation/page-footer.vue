@@ -1,6 +1,6 @@
 <template>
   <footer class="single_column">
-    <nav>
+    <nav class="container" style="padding-top: 80px; paddig-bottom: 80px">
       <div class="join">
         <img src="~/assets/img/blue_square_2.svg" alt="The Movie Database (TMDb)" width="130" height="94">
         <nuxt-link class="rounded" to="/signup">

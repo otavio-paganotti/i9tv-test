@@ -1,5 +1,5 @@
 <template>
-  <div class>
+  <div class="separate">
     <div class="white_column no_pad">
       <section id="media_results" class="panel results">
         <div class="media_items results">

@@ -219,6 +219,31 @@ div.image img {
 }
 
 @media only screen and (max-width: 720px) {
+  div.media.discover div.card.style_1 {
+    width: 100vw;
+  }
+  div.white_column {
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    padding-right: 30px;
+  }
+  div.media.discover div.white_column {
+    padding-left: 0;
+    background: transparent;
+  }
+  .separate {
+    margin-top: 30px
+  }
+  div.media.discover div.card.style_1 div.image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 720px) {
   div.media.discover div.filter_panel {
     width: 100% !important;
   }
@@ -278,4 +303,9 @@ div.pagination p.load_more {
 
 fieldset {
   border: none !important;
+}
+
+.nav-item {
+  color: #fff;
+  font-weight: 600 !important;
 }
