@@ -218,6 +218,22 @@ div.image img {
   }
 }
 
+@media only screen and (max-width: 720px) {
+  div.media.discover div.filter_panel {
+    width: 100% !important;
+  }
+  .content_wrapper .content {
+    display: initial !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: $maxPrimaryPageWidth !important;
+    padding: 0 40px;
+  }
+}
+
 div.media.discover div.card.style_1 div.content {
   width: 100%;
   padding: 26px 10px 12px 10px;

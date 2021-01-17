@@ -38,4 +38,24 @@ header {
       color: #fff !important;
     }
   }
+
+  .navbar--color {
+    background-color: $tmdbDarkBlue;
+  }
+
+  .nav-link {
+    color: white !important;
+  }
+
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  .nav-item {
+    margin-right: 14px !important;
+  }
+
+  .dropdown-item:hover {
+    color: inherit !important;
+  }
 }

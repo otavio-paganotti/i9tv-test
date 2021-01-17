@@ -85,6 +85,7 @@ export const actions = {
     })
   },
   getMovie ({ commit }, movieId) {
+    commit('loading', true)
     this.$axios.get('/movie/' + movieId, {
       params: {
         language: 'pt-BR'
@@ -98,6 +99,9 @@ export const actions = {
           status_code: err.response.data.status_code,
           status_message: err.response.data.status_message
         })
+      })
+      .finally(() => {
+        commit('loading', false)
       })
   }
 }
